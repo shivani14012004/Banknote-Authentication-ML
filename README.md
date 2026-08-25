@@ -1,6 +1,6 @@
 # 📊 Employee Income Clustering using K-Means
 
-A Machine Learning project that uses **K-Means Clustering** to group employees based on their **Age** and **Income**. The trained clustering model is integrated into an interactive **Streamlit web application** for data visualization and cluster prediction.
+A Machine Learning project that uses **K-Means Clustering** to group employees based on their **Age** and **Income**. The trained model is integrated with an interactive **Streamlit web application** for cluster analysis, visualization, and prediction.
 
 ---
 
@@ -8,30 +8,31 @@ A Machine Learning project that uses **K-Means Clustering** to group employees b
 
 This project demonstrates an **Unsupervised Machine Learning** approach using the **K-Means Clustering algorithm**.
 
-The application allows users to:
+The Streamlit application allows users to:
 
 * Upload an employee dataset in CSV format
-* Preview the uploaded data
-* Group employees into clusters based on **Age** and **Income**
+* Preview the uploaded dataset
+* Group employees into different clusters
+* Analyze cluster-wise employee information
 * View cluster counts
-* Analyze average Age and Income for each cluster
-* Visualize clusters using a scatter plot
-* View K-Means model inertia
-* Enter new Age and Income values
+* Calculate average Age and Income for each cluster
+* Visualize employee clusters using a scatter plot
+* View K-Means inertia
+* Enter Age and Income for a new employee
 * Predict the cluster of a new employee
 
-The Streamlit application loads the trained K-Means model from `kmeans.pkl`.
+The trained K-Means model is stored in `kmeans.pkl`, while the feature scaler is stored in `scaler.pkl`.
 
 ---
 
 ## 🎯 Project Objective
 
-The main objective of this project is to apply **K-Means Clustering** to employee data and identify groups of employees with similar characteristics based on:
+The main objective of this project is to identify groups of employees with similar characteristics using:
 
 * **Age**
 * **Income**
 
-The project also demonstrates how an unsupervised Machine Learning model can be integrated into a user-friendly Streamlit application.
+The project demonstrates how an unsupervised Machine Learning model can be trained, saved, and integrated into a user-friendly Streamlit application.
 
 ---
 
@@ -39,18 +40,16 @@ The project also demonstrates how an unsupervised Machine Learning model can be 
 
 ### K-Means Clustering
 
-K-Means is an **unsupervised Machine Learning algorithm** used to divide data points into a predefined number of clusters.
+**K-Means Clustering** is an unsupervised Machine Learning algorithm that divides data points into a predefined number of clusters.
 
-In this project, the trained K-Means model contains **5 clusters**.
+In this project:
 
-The model uses the following features:
+* **Algorithm:** K-Means Clustering
+* **Number of Clusters:** 5
+* **Features:** Age and Income
+* **Scaling:** MinMaxScaler
 
-```text
-Age
-Income
-```
-
-Before clustering, the application applies **MinMaxScaler** to the input features.
+Before applying K-Means, the Age and Income features are scaled using `MinMaxScaler`.
 
 ---
 
@@ -74,14 +73,12 @@ The project uses an employee income dataset containing the following columns:
 | Anita  |  28 |  62000 |
 | Sudhir |  42 | 155000 |
 
-The clustering model uses only:
+The `Name` column is used for identification only. The clustering model uses:
 
 ```text
 Age
 Income
 ```
-
-The `Name` column is not used for clustering.
 
 ---
 
@@ -92,7 +89,7 @@ Employee Dataset
        ↓
 Select Age & Income
        ↓
-Data Scaling
+Feature Scaling
        ↓
 K-Means Clustering
        ↓
@@ -109,31 +106,39 @@ Predict Cluster for New Employee
 
 ## 📈 Application Features
 
-### 1. CSV Dataset Upload
+### 1. 📁 CSV Dataset Upload
 
 Users can upload a CSV file containing `Age` and `Income` columns.
 
-The application displays the first few rows of the uploaded dataset.
+The application displays a preview of the uploaded dataset.
 
-### 2. Cluster Count
+### 2. 📊 Cluster Count
 
 The application displays the number of employees belonging to each cluster.
 
-### 3. Summary Statistics
+### 3. 📋 Cluster Summary
 
-The application calculates the average Age and Income for each cluster.
+The application calculates and displays average:
 
-### 4. Cluster Visualization
+* Age
+* Income
 
-A scatter plot is generated to visualize the employee clusters based on Age and Income.
+for each cluster.
 
-The cluster centers are also displayed on the graph.
+### 4. 📈 Cluster Visualization
 
-### 5. Model Inertia
+A scatter plot is generated using:
 
-The application displays the K-Means **inertia value**, which represents the within-cluster sum of squared distances.
+* X-axis → Age
+* Y-axis → Income
 
-### 6. New Employee Prediction
+The visualization helps users understand how employees are grouped.
+
+### 5. 📐 Model Inertia
+
+The application displays the **K-Means inertia value**, which represents the within-cluster sum of squared distances.
+
+### 6. 🔮 New Employee Prediction
 
 Users can enter:
 
@@ -142,7 +147,7 @@ Age
 Income
 ```
 
-and click **Predict Cluster** to determine which cluster the new employee belongs to.
+and click **Predict Cluster** to determine the cluster of a new employee.
 
 ---
 
@@ -155,6 +160,7 @@ and click **Predict Cluster** to determine which cluster the new employee belong
 | Features           | Age, Income        |
 | Scaling            | MinMaxScaler       |
 | Model File         | `kmeans.pkl`       |
+| Scaler File        | `scaler.pkl`       |
 | Application        | Streamlit          |
 
 ---
@@ -162,12 +168,17 @@ and click **Predict Cluster** to determine which cluster the new employee belong
 ## 📁 Project Structure
 
 ```text
-Employee-Income-KMeans-Clustering/
+Banknote-Authentication-ML/
+│
+├── Screenshot/
+│   ├── app.bn.png.png
+│   ├── app.bnt.png.png
+│   └── screenshot.txt
 │
 ├── app.py
 ├── kmeans.pkl
 ├── scaler.pkl
-├── Employee_income_1.csv
+├── Employee_income.csv
 ├── requirements.txt
 ├── README.md
 └── .gitignore
@@ -175,15 +186,16 @@ Employee-Income-KMeans-Clustering/
 
 ### File Description
 
-| File                    | Description                                         |
-| ----------------------- | --------------------------------------------------- |
-| `app.py`                | Streamlit application for clustering and prediction |
-| `kmeans.pkl`            | Trained K-Means clustering model                    |
-| `scaler.pkl`            | Saved feature scaling object                        |
-| `Employee_income_1.csv` | Employee Age and Income dataset                     |
-| `requirements.txt`      | Python dependencies                                 |
-| `README.md`             | Project documentation                               |
-| `.gitignore`            | Files excluded from GitHub                          |
+| File                  | Description                     |
+| --------------------- | ------------------------------- |
+| `app.py`              | Streamlit application           |
+| `kmeans.pkl`          | Trained K-Means model           |
+| `scaler.pkl`          | Saved MinMaxScaler              |
+| `Employee_income.csv` | Employee Age and Income dataset |
+| `requirements.txt`    | Python dependencies             |
+| `README.md`           | Project documentation           |
+| `.gitignore`          | Files excluded from Git         |
+| `Screenshot/`         | Application screenshots         |
 
 ---
 
@@ -207,13 +219,13 @@ Employee-Income-KMeans-Clustering/
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/employee-income-kmeans-clustering.git
+git clone https://github.com/shivani14012004/Banknote-Authentication-ML.git
 ```
 
 ### Step 2: Navigate to the Project Folder
 
 ```bash
-cd employee-income-kmeans-clustering
+cd Banknote-Authentication-ML
 ```
 
 ### Step 3: Create a Virtual Environment
@@ -232,7 +244,7 @@ venv\Scripts\activate
 
 #### Windows PowerShell
 
-```powershell
+```bash
 venv\Scripts\Activate.ps1
 ```
 
@@ -254,7 +266,7 @@ streamlit run app.py
 
 The application will open in your browser.
 
-Default local address:
+Default local URL:
 
 ```text
 http://localhost:8501
@@ -279,23 +291,18 @@ Income
 
 ### Step 3
 
-The application will display:
+The application displays:
 
-* Raw data preview
-* Cluster count
-* Summary statistics
+* Dataset preview
+* Cluster counts
+* Cluster summary
 * Cluster visualization
 * Cluster centers
 * Model inertia
 
 ### Step 4
 
-Enter a new employee's:
-
-```text
-Age
-Income
-```
+Enter the Age and Income of a new employee.
 
 ### Step 5
 
@@ -309,43 +316,30 @@ The application will display the predicted cluster.
 
 ---
 
-## 📊 Example Input
+## 📝 Example Input
 
 ```text
-Age    = 30
+Age = 30
 Income = 100000
 ```
 
-The application processes the values and predicts the corresponding K-Means cluster.
+The application processes these values and predicts the corresponding K-Means cluster.
 
 ---
 
-## 📸 Project Screenshot
+## 📸 Project Screenshots
 
-Add your Streamlit application screenshot to a folder named:
+### Streamlit Application
 
-```text
-screenshots/
-```
+Click the screenshot to open the **full-size image**.
 
-For example:
+[![Employee Income K-Means Application]()
 
-```text
-screenshots/
-└── kmeans-app.png
-```
+### Application Output
 
-Then add this section to the README:
+[![Employee Income K-Means Output](https://github.com/shivani14012004/Banknote-Authentication-ML/blob/main/Screenshot/app.bnt.png.png?raw=true)](https://github.com/shivani14012004/Banknote-Authentication-ML/blob/main/Screenshot/app.bnt.png.png)
 
-```markdown
-## 📸 Project Screenshot
-
-Click the image below to view the full-size screenshot.
-
-[![K-Means Clustering Application](screenshots/kmeans-app.png)](screenshots/kmeans-app.png)
-```
-
-This makes the screenshot clickable so visitors can open the full-size image.
+> **Note:** The screenshots are stored inside the `Screenshot` folder of this repository.
 
 ---
 
@@ -357,36 +351,38 @@ Through this project, I practiced:
 * K-Means Clustering
 * Feature Scaling
 * Model Serialization using Pickle
-* Data Visualization
 * Cluster Analysis
+* Data Visualization
 * Streamlit Application Development
 * CSV File Upload
+* Machine Learning Model Integration
 * Git and GitHub
-* Machine Learning Model Deployment
 
 ---
 
 ## ⚠️ Important Notes
 
 * The uploaded CSV must contain `Age` and `Income` columns.
-* The application uses these two features for clustering.
-* The trained K-Means model is loaded from `kmeans.pkl`.
-* The virtual environment should not be uploaded to GitHub.
-* Keep the model files in the same project directory as `app.py`.
-* The Python package versions are maintained in `requirements.txt`.
+* The K-Means model uses Age and Income for clustering.
+* The trained model is loaded from `kmeans.pkl`.
+* The scaler is loaded from `scaler.pkl`.
+* Keep `kmeans.pkl` and `scaler.pkl` in the same project directory as `app.py`.
+* Do not upload the virtual environment to GitHub.
+* Required Python packages are listed in `requirements.txt`.
 
 ---
 
 ## 🚀 Future Improvements
 
-Possible improvements for this project include:
+Possible improvements include:
 
-* Add an Elbow Method visualization
+* Add Elbow Method visualization
 * Add Silhouette Score analysis
 * Allow users to select the number of clusters
 * Add downloadable clustered data
-* Add more employee features
+* Add additional employee features
 * Improve the Streamlit user interface
+* Add interactive Plotly visualizations
 * Deploy the application using Streamlit Community Cloud
 
 ---
@@ -395,12 +391,15 @@ Possible improvements for this project include:
 
 **Shivani Patil**
 
-### Machine Learning & Data Science Project
+Machine Learning & Data Science Enthusiast
 
-Built with **Python, K-Means Clustering, Scikit-learn, Pandas, Matplotlib, Seaborn, and Streamlit**.
+### Skills Demonstrated
+
+**Python | Machine Learning | Scikit-learn | Pandas | NumPy | Streamlit | Data Visualization | GitHub**
 
 ---
 
-## ⭐ If You Like This Project
+## ⭐ Support
 
 If you find this project useful, consider giving the repository a ⭐ on GitHub.
+
