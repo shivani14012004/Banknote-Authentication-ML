@@ -333,7 +333,7 @@ The application processes these values and predicts the corresponding K-Means cl
 
 Click the screenshot to open the **full-size image**.
 
-[![Employee Income K-Means Application]()
+[![Employee Income K-Means Application](https://github.com/shivani14012004/Banknote-Authentication-ML/blob/main/Screenshot/app.bn.png.png?raw=true)](https://github.com/shivani14012004/Banknote-Authentication-ML/blob/main/Screenshot/app.bn.png.png)
 
 ### Application Output
 
@@ -402,4 +402,5 @@ Machine Learning & Data Science Enthusiast
 ## ⭐ Support
 
 If you find this project useful, consider giving the repository a ⭐ on GitHub.
+
 
