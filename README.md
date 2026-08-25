@@ -333,11 +333,11 @@ The application processes these values and predicts the corresponding K-Means cl
 
 Click the screenshot to open the **full-size image**.
 
-[![Employee Income K-Means Application](https://github.com/shivani14012004/Banknote-Authentication-ML/blob/main/Screenshot/app.bn.png.png?raw=true)](https://github.com/shivani14012004/Banknote-Authentication-ML/blob/main/Screenshot/app.bn.png.png)
+[![Employee Income K-Means Application](https://github.com/shivani14012004/Banknote-Authentication-ML/blob/main/Screenshot/app.bnt.png.png?raw=true)](https://github.com/shivani14012004/Banknote-Authentication-ML/blob/main/Screenshot/app.bnt.png.png)
 
 ### Application Output
 
-[![Employee Income K-Means Output](https://github.com/shivani14012004/Banknote-Authentication-ML/blob/main/Screenshot/app.bnt.png.png?raw=true)](https://github.com/shivani14012004/Banknote-Authentication-ML/blob/main/Screenshot/app.bnt.png.png)
+[![Employee Income K-Means Output](https://github.com/shivani14012004/Banknote-Authentication-ML/blob/main/Screenshot/app.bn.png.png?raw=true)](https://github.com/shivani14012004/Banknote-Authentication-ML/blob/main/Screenshot/app.bn.png.png)
 
 > **Note:** The screenshots are stored inside the `Screenshot` folder of this repository.
 
