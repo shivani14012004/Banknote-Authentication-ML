@@ -172,8 +172,7 @@ Banknote-Authentication-ML/
 │
 ├── Screenshot/
 │   ├── app.bn.png.png
-│   ├── app.bnt.png.png
-│   └── screenshot.txt
+│   ├── app.bnt.png.png  
 │
 ├── app.py
 ├── kmeans.pkl
